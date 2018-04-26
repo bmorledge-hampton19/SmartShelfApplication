@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A4D010120912E6A000CC14F"
+               BuildableName = "SmartShelfApplication.app"
+               BlueprintName = "SmartShelfApplication"
+               ReferencedContainer = "container:SmartShelfApplication.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A4D011520912E6B000CC14F"
+               BuildableName = "SmartShelfApplicationTests.xctest"
+               BlueprintName = "SmartShelfApplicationTests"
+               ReferencedContainer = "container:SmartShelfApplication.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A4D012020912E6B000CC14F"
+               BuildableName = "SmartShelfApplicationUITests.xctest"
+               BlueprintName = "SmartShelfApplicationUITests"
+               ReferencedContainer = "container:SmartShelfApplication.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A4D010120912E6A000CC14F"
+            BuildableName = "SmartShelfApplication.app"
+            BlueprintName = "SmartShelfApplication"
+            ReferencedContainer = "container:SmartShelfApplication.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A4D010120912E6A000CC14F"
+            BuildableName = "SmartShelfApplication.app"
+            BlueprintName = "SmartShelfApplication"
+            ReferencedContainer = "container:SmartShelfApplication.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A4D010120912E6A000CC14F"
+            BuildableName = "SmartShelfApplication.app"
+            BlueprintName = "SmartShelfApplication"
+            ReferencedContainer = "container:SmartShelfApplication.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
