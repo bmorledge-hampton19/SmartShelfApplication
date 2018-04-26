@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.51.16 PM" translatesAutoresizingMaskIntoConstraints="NO" id="L0E-6i-j0m">
@@ -86,7 +86,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WgU-dz-dsD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rhU-Fn-ucA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="aXU-Tm-4Ig">
@@ -180,7 +180,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tLv-xd-UOC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fS7-3T-7wH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6s-J9-fp1">
@@ -251,7 +251,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VLG-DE-Tbb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="34N-bK-KEY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="boy-NS-27Q">
@@ -370,20 +370,13 @@
                         <viewControllerLayoutGuide type="bottom" id="Heo-H5-Bop"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Log-DH-MeE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="sI1-eI-4dz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dietary Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-tG-VZ6">
-                                <rect key="frame" x="7" y="0.0" width="360" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="gmo-7g-VCC">
                                 <rect key="frame" x="0.0" y="614" width="375" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -476,6 +469,13 @@
                                 <rect key="frame" x="233" y="85" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dietary Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-tG-VZ6">
+                                <rect key="frame" x="60" y="11" width="360" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -493,7 +493,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PQP-hM-elj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XrB-FL-YoF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="V3X-WK-8xf">
@@ -682,7 +682,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cij-db-RZ2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0AT-X2-Ac7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="sYJ-PV-Gur">
@@ -768,7 +768,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PBg-4R-fP2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8KX-uc-zdf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="TBt-sk-JJ9">
@@ -849,15 +849,11 @@
                         <viewControllerLayoutGuide type="bottom" id="DKz-iY-Cz5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rGE-Eb-OZI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="yEs-T5-tbP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="580b57fcd9996e24bc43c55f" translatesAutoresizingMaskIntoConstraints="NO" id="TlH-GE-yMy">
-                                <rect key="frame" x="74" y="222" width="227" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Profile is complete lets start scanning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-VG-eDh">
@@ -889,9 +885,20 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="AbY-hL-0hd"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="simple_green_rectangle_preview" translatesAutoresizingMaskIntoConstraints="NO" id="QIb-8s-Y60">
+                                <rect key="frame" x="50" y="255" width="275" height="151"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="580b57fcd9996e24bc43c55f" translatesAutoresizingMaskIntoConstraints="NO" id="fS0-hP-xt1">
+                                <rect key="frame" x="24" y="193" width="333" height="274"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="rectangle" destination="QIb-8s-Y60" id="zIt-na-ZIn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vdq-n8-Zhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -923,12 +930,13 @@
         <image name="images-5" width="225" height="225"/>
         <image name="nut" width="1600" height="1600"/>
         <image name="prawn" width="1600" height="1600"/>
+        <image name="simple_green_rectangle_preview" width="275" height="151"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HOM-7x-YxB"/>
-        <segue reference="AbY-hL-0hd"/>
         <segue reference="eBC-Wh-mzo"/>
-        <segue reference="4IV-YB-zR7"/>
+        <segue reference="E67-Ik-aBk"/>
         <segue reference="jBD-Tq-hcv"/>
+        <segue reference="gwh-z1-Mnp"/>
+        <segue reference="AbY-hL-0hd"/>
     </inferredMetricsTieBreakers>
 </document>

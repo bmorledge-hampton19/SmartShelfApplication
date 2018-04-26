@@ -13,6 +13,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var mylibrary: UIButton!
     var video = AVCaptureVideoPreviewLayer()
     
+    @IBOutlet weak var rectangle: UIImageView!
     @IBOutlet weak var myImageView: UIImageView!
     
    
@@ -91,7 +92,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
         
-        //self.view.bringSubview(toFront: square)
+        self.view.bringSubview(toFront: rectangle)
         
         session.startRunning()
         
