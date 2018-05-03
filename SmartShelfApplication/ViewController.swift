@@ -9,7 +9,13 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AVCaptureMetadataOutputObjectsDelegate {
+
+class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    
+    let session         : AVCaptureSession = AVCaptureSession()
+    var previewLayer    : AVCaptureVideoPreviewLayer!
+    var highlightView   : UIView = UIView()
+    
     @IBOutlet weak var mylibrary: UIButton!
     var video = AVCaptureVideoPreviewLayer()
     @IBOutlet weak var barcode: UIImageView!
@@ -17,6 +23,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var rectangle: UIImageView!
     @IBOutlet weak var myImageView: UIImageView!
     
+    @IBOutlet weak var Barcodescanner: UIImageView!
    
 
     @IBAction func myimage2(_ sender: UIButton) {
@@ -50,9 +57,56 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        // Allow the view to resize freely
+        self.highlightView.autoresizingMask =   UIViewAutoresizing.FlexibleTopMargin |
+            UIViewAutoresizing.FlexibleBottomMargin |
+            UIViewAutoresizing.FlexibleLeftMargin |
+            UIViewAutoresizing.FlexibleRightMargin
         
+        // Select the color you want for the completed scan reticle
+        self.highlightView.layer.borderColor = UIColor.greenColor().CGColor
+        self.highlightView.layer.borderWidth = 3
+        
+        // Add it to our controller's view as a subview.
+        self.view.addSubview(self.highlightView)
+        
+        
+        // For the sake of discussion this is the camera
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        
+        // Create a nilable NSError to hand off to the next method.
+        // Make sure to use the "var" keyword and not "let"
+        var error : NSError? = nil
+        
+        
+        let input : AVCaptureDeviceInput? = AVCaptureDeviceInput.deviceInputWithDevice(device, error: &error) as? AVCaptureDeviceInput
+        
+        // If our input is not nil then add it to the session, otherwise we're kind of done!
+        if input != nil {
+            session.addInput(input)
+        }
+        else {
+            // This is fine for a demo, do something real with this in your app. :)
+            println(error)
+        }
+        
+        let output = AVCaptureMetadataOutput()
+        output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+        session.addOutput(output)
+        output.metadataObjectTypes = output.availableMetadataObjectTypes
+        
+        
+        previewLayer = AVCaptureVideoPreviewLayer.layerWithSession(session) as AVCaptureVideoPreviewLayer
+        previewLayer.frame = self.view.bounds
+        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        self.view.layer.addSublayer(previewLayer)
+        
+        // Start the scanner. You'll have to end it yourself later.
+        session.startRunning()
+
         
     }
     
@@ -61,63 +115,55 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
-    
-    
-    @IBOutlet weak var arcode: UIButton!
-    @IBAction func Barcode(_ sender: UIButton) {
- 
-        //Creating session
-        let session = AVCaptureSession()
+    // This is called when we find a known barcode type with the camera.
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         
-        //Define capture devcie
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+        var highlightViewRect = CGRectZero
         
-        do
-        {
-            let input = try AVCaptureDeviceInput(device: captureDevice!)
-            session.addInput(input)
-        }
-        catch
-        {
-            print ("ERROR")
-        }
+        var barCodeObject : AVMetadataObject!
         
-        let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
+        var detectionString : String!
         
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        let barCodeTypes = [AVMetadataObjectTypeUPCECode,
+                            AVMetadataObjectTypeCode39Code,
+                            AVMetadataObjectTypeCode39Mod43Code,
+                            AVMetadataObjectTypeEAN13Code,
+                            AVMetadataObjectTypeEAN8Code,
+                            AVMetadataObjectTypeCode93Code,
+                            AVMetadataObjectTypeCode128Code,
+                            AVMetadataObjectTypePDF417Code,
+                            AVMetadataObjectTypeQRCode,
+                            AVMetadataObjectTypeAztecCode
+        ]
         
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
         
-        video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
-        
-        self.view.bringSubview(toFront: rectangle)
-        
-        session.startRunning()
-        
-    }
-    
-    func metadataOutput(_ captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        
-        if metadataObjects != nil && metadataObjects.count != 0
-        {
-            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
-            {
-                if object.type == AVMetadataObject.ObjectType.qr
-                {
-                    let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
-                        UIPasteboard.general.string = object.stringValue
-                    }))
+        // The scanner is capable of capturing multiple 2-dimensional barcodes in one scan.
+        for metadata in metadataObjects {
+            
+            for barcodeType in barCodeTypes {
+                
+                if metadata.type == barcodeType {
+                    barCodeObject = self.previewLayer.transformedMetadataObjectForMetadataObject(metadata as AVMetadataMachineReadableCodeObject)
                     
-                    present(alert, animated: true, completion: nil)
+                    highlightViewRect = barCodeObject.bounds
+                    
+                    detectionString = (metadata as AVMetadataMachineReadableCodeObject).stringValue
+                    
+                    self.session.stopRunning()
+                    break
                 }
+                
             }
         }
+        
+        println(detectionString)
+        self.highlightView.frame = highlightViewRect
+        self.view.bringSubviewToFront(self.highlightView)
+        
     }
+
+    
+    
     
 }
 
