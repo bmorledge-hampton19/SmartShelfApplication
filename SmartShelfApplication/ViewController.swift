@@ -63,18 +63,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     
-    @IBOutlet weak var Barcode: UIButton!
+    @IBOutlet weak var arcode: UIButton!
     @IBAction func Barcode(_ sender: UIButton) {
  
         //Creating session
         let session = AVCaptureSession()
         
         //Define capture devcie
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
         do
         {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
+            let input = try AVCaptureDeviceInput(device: captureDevice!)
             session.addInput(input)
         }
         catch
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
-        output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
         
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
@@ -99,13 +99,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func metadataOutput(_ captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
         if metadataObjects != nil && metadataObjects.count != 0
         {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
             {
-                if object.type == AVMetadataObjectTypeQRCode
+                if object.type == AVMetadataObject.ObjectType.qr
                 {
                     let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))

@@ -7,17 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "download.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "download.png",
-      "unassigned" : true,
-      "scale" : "1x"
     }
   ],
   "info" : {
