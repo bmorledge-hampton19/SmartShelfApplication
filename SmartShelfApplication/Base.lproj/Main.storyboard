@@ -41,7 +41,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="FXC-cF-crU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="-72" y="-139" width="509" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Smartshelf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkX-i5-Ok3">
@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="aXU-Tm-4Ig">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="-120" y="-101" width="557" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is Smartshelf?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7I-Pc-wug">
@@ -153,7 +153,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDs-J2-wFX">
-                                <rect key="frame" x="0.0" y="20" width="80" height="51"/>
+                                <rect key="frame" x="6" y="41" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Back">
@@ -205,11 +205,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="Gm2-ZL-fvj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="-62" y="-82" width="492" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="HhF-7e-Mh0">
-                                <rect key="frame" x="-6" y="587" width="381" height="80"/>
+                                <rect key="frame" x="-35" y="587" width="447" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.51.16 PM" translatesAutoresizingMaskIntoConstraints="NO" id="C5I-d8-wml">
@@ -255,7 +255,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="boy-NS-27Q">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="-58" y="-118" width="519" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2P-GK-ymp">
@@ -273,7 +273,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="y5m-HO-aUv">
-                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <rect key="frame" x="-27" y="614" width="440" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rj-VF-BbO">
@@ -325,7 +325,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izl-Ap-kqE">
-                                <rect key="frame" x="0.0" y="614" width="96" height="53"/>
+                                <rect key="frame" x="0.0" y="614" width="96" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Back">
@@ -374,11 +374,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="sI1-eI-4dz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="-96" y="-117" width="549" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="gmo-7g-VCC">
-                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <rect key="frame" x="-113" y="614" width="541" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BR-Fc-aQz">
@@ -510,7 +510,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="V3X-WK-8xf">
-                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <rect key="frame" x="-84" y="614" width="552" height="393"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C59-4a-3DZ">
@@ -536,7 +536,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="KSj-28-wAe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="-118" y="-123" width="612" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF0-Up-3Zc">
@@ -710,7 +710,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="sYJ-PV-Gur">
-                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <rect key="frame" x="-57" y="614" width="469" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSy-hw-7CK">
@@ -789,11 +789,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="TBt-sk-JJ9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="-52" y="-275" width="467" height="339"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="hR2-m8-89w">
-                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <rect key="frame" x="0.0" y="614" width="375" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urE-Zr-GCA">
@@ -870,9 +870,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="yEs-T5-tbP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="-24" y="-136" width="459" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Profile is complete lets start scanning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-VG-eDh">
+                                <rect key="frame" x="2" y="142" width="370" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.01300797611" green="0.66381031270000002" blue="0.37421014899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chk-vg-qFy">
                                 <rect key="frame" x="0.0" y="572" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -889,27 +896,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajR-RT-cF8">
-                                <rect key="frame" x="158" y="74" width="59" height="60"/>
+                                <rect key="frame" x="158" y="76" width="59" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="AbY-hL-0hd"/>
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="simple_green_rectangle_preview" translatesAutoresizingMaskIntoConstraints="NO" id="QIb-8s-Y60">
-                                <rect key="frame" x="50" y="255" width="275" height="151"/>
+                                <rect key="frame" x="50" y="272" width="272" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="580b57fcd9996e24bc43c55f" translatesAutoresizingMaskIntoConstraints="NO" id="fS0-hP-xt1">
-                                <rect key="frame" x="29" y="198" width="317" height="270"/>
+                                <rect key="frame" x="16" y="48" width="323" height="287"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Profile is complete lets start scanning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-VG-eDh">
-                                <rect key="frame" x="2" y="142" width="370" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="0.01300797611" green="0.66381031270000002" blue="0.37421014899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -968,10 +968,10 @@
         <image name="simple_green_rectangle_preview" width="275" height="151"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="32I-ed-v8C"/>
-        <segue reference="gwh-z1-Mnp"/>
-        <segue reference="g0A-Zu-RUA"/>
-        <segue reference="E67-Ik-aBk"/>
-        <segue reference="eBC-Wh-mzo"/>
+        <segue reference="jBD-Tq-hcv"/>
+        <segue reference="4IV-YB-zR7"/>
+        <segue reference="o8X-89-63Y"/>
+        <segue reference="AbY-hL-0hd"/>
+        <segue reference="HOM-7x-YxB"/>
     </inferredMetricsTieBreakers>
 </document>

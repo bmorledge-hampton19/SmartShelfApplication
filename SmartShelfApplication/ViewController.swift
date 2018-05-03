@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var mylibrary: UIButton!
     var video = AVCaptureVideoPreviewLayer()
+    @IBOutlet weak var barcode: UIImageView!
     
     @IBOutlet weak var rectangle: UIImageView!
     @IBOutlet weak var myImageView: UIImageView!
