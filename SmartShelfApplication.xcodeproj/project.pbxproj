@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A33562C20A28A7E005A7089 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A33562B20A28A7E005A7089 /* QRScannerController.swift */; };
 		3A4D010620912E6A000CC14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D010520912E6A000CC14F /* AppDelegate.swift */; };
 		3A4D010820912E6A000CC14F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D010720912E6A000CC14F /* ViewController.swift */; };
 		3A4D010B20912E6A000CC14F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D010920912E6A000CC14F /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A33562B20A28A7E005A7089 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRScannerController.swift; path = /Users/ibusik21/Documents/SmartShelfApplication/SmartShelfApplication/QRScannerController.swift; sourceTree = "<absolute>"; };
 		3A4D010220912E6A000CC14F /* SmartShelfApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartShelfApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D010520912E6A000CC14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4D010720912E6A000CC14F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		3A4D010420912E6A000CC14F /* SmartShelfApplication */ = {
 			isa = PBXGroup;
 			children = (
+				3A33562B20A28A7E005A7089 /* QRScannerController.swift */,
 				3A4D010520912E6A000CC14F /* AppDelegate.swift */,
 				3A4D010720912E6A000CC14F /* ViewController.swift */,
 				3A4D010920912E6A000CC14F /* Main.storyboard */,
@@ -265,6 +268,7 @@
 			files = (
 				3A4D010820912E6A000CC14F /* ViewController.swift in Sources */,
 				3A4D010620912E6A000CC14F /* AppDelegate.swift in Sources */,
+				3A33562C20A28A7E005A7089 /* QRScannerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
