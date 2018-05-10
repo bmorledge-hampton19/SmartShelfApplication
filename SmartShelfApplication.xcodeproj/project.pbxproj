@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A33562C20A28A7E005A7089 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A33562B20A28A7E005A7089 /* QRScannerController.swift */; };
 		3A4D010620912E6A000CC14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D010520912E6A000CC14F /* AppDelegate.swift */; };
 		3A4D010820912E6A000CC14F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D010720912E6A000CC14F /* ViewController.swift */; };
 		3A4D010B20912E6A000CC14F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D010920912E6A000CC14F /* Main.storyboard */; };
@@ -15,6 +14,8 @@
 		3A4D011020912E6A000CC14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D010E20912E6A000CC14F /* LaunchScreen.storyboard */; };
 		3A4D011B20912E6B000CC14F /* SmartShelfApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D011A20912E6B000CC14F /* SmartShelfApplicationTests.swift */; };
 		3A4D012620912E6B000CC14F /* SmartShelfApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D012520912E6B000CC14F /* SmartShelfApplicationUITests.swift */; };
+		3A7EA34D20A3E8E9004D4BAE /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EA34C20A3E8E9004D4BAE /* QRScannerController.swift */; };
+		3A7EA34F20A3EE17004D4BAE /* BarcodeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EA34E20A3EE17004D4BAE /* BarcodeDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A33562B20A28A7E005A7089 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRScannerController.swift; path = /Users/ibusik21/Documents/SmartShelfApplication/SmartShelfApplication/QRScannerController.swift; sourceTree = "<absolute>"; };
 		3A4D010220912E6A000CC14F /* SmartShelfApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartShelfApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D010520912E6A000CC14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4D010720912E6A000CC14F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		3A4D012120912E6B000CC14F /* SmartShelfApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartShelfApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D012520912E6B000CC14F /* SmartShelfApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartShelfApplicationUITests.swift; sourceTree = "<group>"; };
 		3A4D012720912E6B000CC14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7EA34C20A3E8E9004D4BAE /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		3A7EA34E20A3EE17004D4BAE /* BarcodeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,14 @@
 		3A4D010420912E6A000CC14F /* SmartShelfApplication */ = {
 			isa = PBXGroup;
 			children = (
-				3A33562B20A28A7E005A7089 /* QRScannerController.swift */,
+				3A7EA34C20A3E8E9004D4BAE /* QRScannerController.swift */,
 				3A4D010520912E6A000CC14F /* AppDelegate.swift */,
 				3A4D010720912E6A000CC14F /* ViewController.swift */,
 				3A4D010920912E6A000CC14F /* Main.storyboard */,
 				3A4D010C20912E6A000CC14F /* Assets.xcassets */,
 				3A4D010E20912E6A000CC14F /* LaunchScreen.storyboard */,
 				3A4D011120912E6A000CC14F /* Info.plist */,
+				3A7EA34E20A3EE17004D4BAE /* BarcodeDelegate.swift */,
 			);
 			path = SmartShelfApplication;
 			sourceTree = "<group>";
@@ -267,8 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4D010820912E6A000CC14F /* ViewController.swift in Sources */,
+				3A7EA34D20A3E8E9004D4BAE /* QRScannerController.swift in Sources */,
 				3A4D010620912E6A000CC14F /* AppDelegate.swift in Sources */,
-				3A33562C20A28A7E005A7089 /* QRScannerController.swift in Sources */,
+				3A7EA34F20A3EE17004D4BAE /* BarcodeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

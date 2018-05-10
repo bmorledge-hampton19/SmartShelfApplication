@@ -20,6 +20,12 @@ class QRScannerController: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
     
+    var delegate:BarcodeDelegate?
+    
+    func changeText(newText: String) {
+        messageLabel2.text = newText
+    }
+    
     @IBAction func exit(_ sender: UIButton) {
         
         navigationController?.popViewController(animated: true)
@@ -153,6 +159,7 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             if metadataObj.stringValue != nil {
                 launchApp(decodedURL: metadataObj.stringValue!)
                 messageLabel2.text = metadataObj.stringValue
+                
             }
         }
     }

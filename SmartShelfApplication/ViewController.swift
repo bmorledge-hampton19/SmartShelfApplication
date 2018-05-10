@@ -24,8 +24,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var myImageView: UIImageView!
     
     @IBOutlet weak var Barcodescanner: UIImageView!
-   
-
+    
     @IBAction func myimage2(_ sender: UIButton) {
         print("myimageview")
         let image = UIImagePickerController()
