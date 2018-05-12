@@ -16,9 +16,10 @@ class QRScannerController: UIViewController {
     @IBOutlet var backView: UIStackView!
     
     var captureSession = AVCaptureSession()
-    
+    var parentVC : ViewController?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
+    var barcodeValue: Int = 42
     
     var delegate:BarcodeDelegate?
     
@@ -28,9 +29,25 @@ class QRScannerController: UIViewController {
     
     @IBAction func exit(_ sender: UIButton) {
         
-        navigationController?.popViewController(animated: true)
+        parentVC?.updateBarcodeValue(value: barcodeValue)
+        goToSampleView()
         
-        dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+        if let destinationViewController = segue.destination as? ViewController {
+            destinationViewController.barcodeValue = self.barcodeValue
+        }
+        
+    }
+    
+    
+    func goToSampleView() {
+        performSegue(withIdentifier: "segueFromScanner", sender: nil)
+    }
+    
+    func checkBarcode() {
         
     }
     
@@ -157,8 +174,12 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                launchApp(decodedURL: metadataObj.stringValue!)
-                messageLabel2.text = metadataObj.stringValue
+                //launchApp(decodedURL: metadataObj.stringValue!)
+                //messageLabel2.text = metadataObj.stringValue
+                parentVC?.updateBarcodeValue(value: Int(metadataObj.stringValue!)!)
+        
+                navigationController?.popViewController(animated: true)
+                dismiss(animated: true, completion: nil)
                 
             }
         }

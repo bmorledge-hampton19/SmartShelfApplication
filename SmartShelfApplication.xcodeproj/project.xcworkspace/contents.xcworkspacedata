@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/ibusik21/Documents/SmartShelfApplication/SmartShelfApplication/QRScannerController.swift">
-   </FileRef>
-   <FileRef
-      location = "self:">
+      location = "self:SmartShelfApplication.xcodeproj">
    </FileRef>
 </Workspace>
