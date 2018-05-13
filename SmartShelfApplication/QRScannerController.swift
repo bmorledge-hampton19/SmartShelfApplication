@@ -19,7 +19,9 @@ class QRScannerController: UIViewController {
     var parentVC : ViewController?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
-    var barcodeValue: Int = 42
+    var barcodeValue: Int = 1
+    var foodItem : [[String:Any?]]?
+    var foodFound : Bool?
     
     var delegate:BarcodeDelegate?
     
@@ -28,16 +30,29 @@ class QRScannerController: UIViewController {
     }
     
     @IBAction func exit(_ sender: UIButton) {
-        
-        parentVC?.updateBarcodeValue(value: barcodeValue)
-        goToSampleView()
-        
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func test(_ sender: UIButton) {
+        checkBarcode()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
         if let destinationViewController = segue.destination as? ViewController {
-            destinationViewController.barcodeValue = self.barcodeValue
+            
+            destinationViewController.loadViewIfNeeded()
+            
+            if !foodFound! {
+                destinationViewController.barcodeValue = self.barcodeValue
+                destinationViewController.setFoodInputBarcodeIDLabel(text: "Barcode ID: \(self.barcodeValue)")
+            }
+                
+            else if foodFound! {
+                destinationViewController.foodItem = self.foodItem
+                let foodName : String = foodItem![0]["FoodName"] as! String
+                destinationViewController.setFoodNameForGivenBarcode(text: "Food Name: \(foodName)")
+            }
+            
         }
         
     }
@@ -47,8 +62,117 @@ class QRScannerController: UIViewController {
         performSegue(withIdentifier: "segueFromScanner", sender: nil)
     }
     
+    func goToInputInfoView() {
+        performSegue(withIdentifier: "toItemInfoInput", sender: nil)
+    }
+    
+    func goToDisplayFoodItemView() {
+        performSegue(withIdentifier: "toDisplayFoodItem", sender: nil)
+    }
+    
     func checkBarcode() {
         
+        // Create the JSON to send to the PHP file
+        let parameters = ["BarcodeID": String(barcodeValue)];
+        
+        print("Beginning Check for the barcode...")
+        
+        // Important for PHP connection
+        var request:URLRequest = URLRequest(url: URL(string: "http://smartshelfphp-env.us-east-1.elasticbeanstalk.com/BarcodeScan.php")!)
+        
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        let session = URLSession.shared
+        
+        print("Here goes nothing!")
+        
+        let group = DispatchGroup()
+        group.enter()
+        
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                print("This first error triggered.")
+                print(error?.localizedDescription as Any)
+                return
+            }
+            
+            guard let data = data else {
+                print("Some sort of data error happened.")
+                return
+            }
+            
+            do {
+                print("Trying to do something with the results...")
+                
+                
+                // Create json object from data
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    
+                    print("Here are the results:")
+                    print("")
+                    
+                    // Get the foodFound variable from JSON
+                    guard let foodFoundTemp = json["FoodFound"] as? Bool else {
+                        print("FoodFound was not correctly cast to a boolean value")
+                        return
+                    }
+                    self.foodFound = foodFoundTemp
+                    
+                    // Take action depending on whether or not the food item was found.
+                    if self.foodFound! {
+                        
+                        print("A food item was found with the given ID!")
+                        print("Preparing to pass over information about the item...")
+                        
+                        // Get the foodItem from JSON (If it even exists)
+                        guard let foodItemTemp = json["FoodItem"] as? [[String: Any]] else {
+                            print("Something went wrong unpacking the food item.")
+                            return
+                        }
+                        self.foodItem = foodItemTemp
+                        
+                    }
+                    else if !self.foodFound! {
+                        
+                        print("No food item found with the given ID")
+                        print("Preparing to pass the ID over to the next dialogue...")
+                        
+                    }
+                    
+                    group.leave()
+                    
+                }
+                
+            } catch let error {
+                print(error.localizedDescription)
+                print("Data error! Data was:")
+                let errorData:NSString = NSString(data: data, encoding: String.Encoding.ascii.rawValue)!
+                print(errorData)
+            }
+        })
+        
+        
+        task.resume()
+        
+        group.notify(queue: .main) {
+            // Go to the appropriate view.
+            if self.foodFound! {
+                self.goToDisplayFoodItemView()
+            }
+            if !self.foodFound! {
+                self.goToInputInfoView()
+            }
+        }
     }
     
     private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,

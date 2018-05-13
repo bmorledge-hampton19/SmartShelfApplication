@@ -16,8 +16,20 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var previewLayer    : AVCaptureVideoPreviewLayer!
     var highlightView   : UIView = UIView()
     var barcodeValue : Int = 0
+    var foodItem : [[String : Any?]]?
+    
+    @IBOutlet weak var foodInputBarcodeIDLabel: UILabel!
+    func setFoodInputBarcodeIDLabel (text: String) {
+        foodInputBarcodeIDLabel.text = text
+    }
+    
+    @IBOutlet weak var foodNameForGivenBarcode: UILabel!
+    func setFoodNameForGivenBarcode (text: String) {
+        foodNameForGivenBarcode.text = text
+    }
     
     @IBOutlet weak var barcodeText: UILabel!
+    
     
     @IBOutlet weak var sampleText: UILabel!
     @IBAction func updateSample(_ sender: UIButton) {
@@ -26,7 +38,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     func updateBarcodeValue(value:Int) {
         barcodeValue = value
-        barcodeText.text = String(value)
     }
     
     @IBOutlet weak var mylibrary: UIButton!

@@ -946,13 +946,6 @@
                                 <rect key="frame" x="43" y="329" width="289" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nothing Here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkq-xi-Ug9">
-                                <rect key="frame" x="134" y="492" width="107" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCk-8a-guu">
                                 <rect key="frame" x="172" y="740" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -966,7 +959,6 @@
                     </view>
                     <connections>
                         <outlet property="Barcodescanner" destination="QIb-8s-Y60" id="FcO-rK-aWA"/>
-                        <outlet property="barcodeText" destination="Hkq-xi-Ug9" id="tIP-CU-O1X"/>
                         <outlet property="rectangle" destination="QIb-8s-Y60" id="zIt-na-ZIn"/>
                         <segue destination="TZ5-ex-Y8n" kind="show" identifier="sampleSegue" id="6mi-HI-FGR"/>
                     </connections>
@@ -1004,7 +996,7 @@
                                 <color key="tintColor" red="1" green="0.37623673829999998" blue="0.21356858009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="De9-WE-jnm">
-                                <rect key="frame" x="16" y="79" width="34" height="30"/>
+                                <rect key="frame" x="16" y="52" width="34" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-MZ-6dk">
@@ -1012,6 +1004,13 @@
                                         <state key="normal" title="Back"/>
                                         <connections>
                                             <action selector="exit:" destination="e74-PY-ath" eventType="touchUpInside" id="rk8-Yl-WpM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffG-Xu-G22">
+                                        <rect key="frame" x="0.0" y="30" width="34" height="30"/>
+                                        <state key="normal" title="Test"/>
+                                        <connections>
+                                            <action selector="test:" destination="e74-PY-ath" eventType="touchUpInside" id="d8s-HA-Jnc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1023,6 +1022,8 @@
                         <outlet property="backView" destination="De9-WE-jnm" id="Ukz-Ii-Fkj"/>
                         <outlet property="messageLabel2" destination="an7-dw-yB4" id="djK-y0-Sr3"/>
                         <segue destination="TZ5-ex-Y8n" kind="show" identifier="segueFromScanner" id="bCq-nd-wzG"/>
+                        <segue destination="0CN-XC-RGa" kind="show" identifier="toItemInfoInput" id="mNc-Xq-PQE"/>
+                        <segue destination="Im0-Te-CZc" kind="show" identifier="toDisplayFoodItem" id="ad4-dS-PBJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J42-oK-v6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1032,7 +1033,7 @@
         <!--View Controller-->
         <scene sceneID="arz-ZI-qy0">
             <objects>
-                <viewController id="0CN-XC-RGa" sceneMemberID="viewController">
+                <viewController id="0CN-XC-RGa" customClass="ViewController" customModule="SmartShelfApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="atw-HV-AGF"/>
                         <viewControllerLayoutGuide type="bottom" id="DHy-wF-fJn"/>
@@ -1043,6 +1044,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="vIi-fz-Nqw">
                                 <rect key="frame" x="-25" y="676" width="424" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="Etg-cl-Ybn">
+                                <rect key="frame" x="-25" y="-119" width="424" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-6r-Pvb">
@@ -1085,22 +1090,28 @@
                                 <rect key="frame" x="156" y="125" width="187" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-04-25 at 2.52.38 PM" translatesAutoresizingMaskIntoConstraints="NO" id="Etg-cl-Ybn">
-                                <rect key="frame" x="-25" y="-119" width="424" height="236"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4W-Pu-PLJ">
+                                <rect key="frame" x="16" y="231" width="132" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="foodInputBarcodeIDLabel" destination="D4W-Pu-PLJ" id="EOo-8d-H98"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgu-x3-XaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6473" y="-98"/>
+            <point key="canvasLocation" x="6472.8000000000002" y="-98.275862068965523"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MZg-u3-1xJ">
             <objects>
-                <viewController id="Im0-Te-CZc" sceneMemberID="viewController">
+                <viewController id="Im0-Te-CZc" customClass="ViewController" customModule="SmartShelfApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DI7-fu-NFn"/>
                         <viewControllerLayoutGuide type="bottom" id="SCc-8O-yj5"/>
@@ -1108,12 +1119,24 @@
                     <view key="view" contentMode="scaleToFill" id="vfg-lR-qVB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj8-En-bea">
+                                <rect key="frame" x="82" y="133" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="foodNameForGivenBarcode" destination="Oj8-En-bea" id="pPB-0G-YnA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rs-YT-MYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6473" y="595"/>
+            <point key="canvasLocation" x="6472.8000000000002" y="594.82758620689663"/>
         </scene>
     </scenes>
     <resources>
