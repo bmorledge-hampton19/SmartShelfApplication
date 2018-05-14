@@ -22,6 +22,7 @@ class QRScannerController: UIViewController {
     var barcodeValue: Int = 1
     var foodItem : [[String:Any?]]?
     var foodFound : Bool?
+    var barcodeFound : Bool = false
     
     var delegate:BarcodeDelegate?
     
@@ -57,17 +58,14 @@ class QRScannerController: UIViewController {
         
     }
     
-    
-    func goToSampleView() {
-        performSegue(withIdentifier: "segueFromScanner", sender: nil)
-    }
-    
     func goToInputInfoView() {
         performSegue(withIdentifier: "toItemInfoInput", sender: nil)
+        print("Segue Activated 1")
     }
     
     func goToDisplayFoodItemView() {
         performSegue(withIdentifier: "toDisplayFoodItem", sender: nil)
+        print("Segue Activated 2")
     }
     
     func checkBarcode() {
@@ -169,7 +167,7 @@ class QRScannerController: UIViewController {
             if self.foodFound! {
                 self.goToDisplayFoodItemView()
             }
-            if !self.foodFound! {
+            else if !self.foodFound! {
                 self.goToInputInfoView()
             }
         }
@@ -300,10 +298,11 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             if metadataObj.stringValue != nil {
                 //launchApp(decodedURL: metadataObj.stringValue!)
                 //messageLabel2.text = metadataObj.stringValue
-                parentVC?.updateBarcodeValue(value: Int(metadataObj.stringValue!)!)
-        
-                navigationController?.popViewController(animated: true)
-                dismiss(animated: true, completion: nil)
+                barcodeValue = Int(metadataObj.stringValue!)!
+                if (!barcodeFound) {
+                    checkBarcode()
+                    barcodeFound = true
+                }
                 
             }
         }
