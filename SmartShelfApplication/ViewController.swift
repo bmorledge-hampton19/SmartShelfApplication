@@ -97,6 +97,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     
     @IBAction func addToDB(_ sender: UIButton) {
         
+        let group = DispatchGroup()
+        group.enter()
+        
         print("attempting to add...")
         
         let name : String = newFoodName.text!
@@ -142,9 +145,17 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
                 print(errorData)
                 
             }
+            
+            group.leave()
+            
         })
         
         task.resume()
+        
+        group.notify(queue: .main) {
+            // Go to the appropriate view.
+            self.performSegue(withIdentifier: "nameInputToShelf", sender: nil)
+        }
         
     }
     
