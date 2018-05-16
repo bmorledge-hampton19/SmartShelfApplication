@@ -9,27 +9,32 @@
 import UIKit
 import AVFoundation
 
+// This view controller only handles the barcode scanner.
 class QRScannerController: UIViewController {
 
+    // Components of the view controller.
     @IBOutlet var messageLabel2: UILabel!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var backView: UIStackView!
     
+    // These are important for capturing the barcode.
     var captureSession = AVCaptureSession()
     var parentVC : ViewController?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
+    
+    // These are important for passing and receiving information about the barcode to and from the database.
     var barcodeValue: Int = 1
     var foodItem : [[String:Any?]]?
     var foodFound : Bool?
     var barcodeFound : Bool = false
     
-    var delegate:BarcodeDelegate?
-    
+    // This isn't being used... But maybe we'll use it later!
     func changeText(newText: String) {
         messageLabel2.text = newText
     }
     
+    // These are functions for the two buttons at the top left corner of the application.  The first one takes you back to the previous page, and the second one runs a check on either the default barcode value or the one most recently scanned.
     @IBAction func exit(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -41,13 +46,16 @@ class QRScannerController: UIViewController {
             
         if let destinationViewController = segue.destination as? ViewController {
             
+            // Pre-load the view controller so we can alter the text fields in it.
             destinationViewController.loadViewIfNeeded()
             
+            // If the barcode was not recognized, pass the barcode value over to the main view controller and display it in the next page.
             if !foodFound! {
                 destinationViewController.barcodeValue = self.barcodeValue
                 destinationViewController.setFoodInputBarcodeIDLabel(text: "Barcode ID: \(self.barcodeValue)")
             }
                 
+            // If the barcode was recognized, pass information about it back to the main view controller and display its name in the next page.
             else if foodFound! {
                 destinationViewController.foodItem = self.foodItem
                 let foodName : String = foodItem![0]["FoodName"] as! String
@@ -58,11 +66,11 @@ class QRScannerController: UIViewController {
         
     }
     
+    // Segues back to the main view controller
     func goToInputInfoView() {
         performSegue(withIdentifier: "toItemInfoInput", sender: nil)
         print("Segue Activated 1")
     }
-    
     func goToDisplayFoodItemView() {
         performSegue(withIdentifier: "toDisplayFoodItem", sender: nil)
         print("Segue Activated 2")
@@ -93,6 +101,7 @@ class QRScannerController: UIViewController {
         
         print("Here goes nothing!")
         
+        // Setup the dispatch group to delay tasks until after the Database has been updated.
         let group = DispatchGroup()
         group.enter()
         
@@ -152,6 +161,7 @@ class QRScannerController: UIViewController {
                 }
                 
             } catch let error {
+                // If something went wrong, print out the result of the PHP code to diagnose the issue.
                 print(error.localizedDescription)
                 print("Data error! Data was:")
                 let errorData:NSString = NSString(data: data, encoding: String.Encoding.ascii.rawValue)!
@@ -162,6 +172,7 @@ class QRScannerController: UIViewController {
         
         task.resume()
         
+        // When the query has finished, run this code.
         group.notify(queue: .main) {
             // Go to the appropriate view.
             if self.foodFound! {
@@ -173,6 +184,7 @@ class QRScannerController: UIViewController {
         }
     }
     
+    // From here on, this is code we copy pasted to help run our barcode scanner.
     private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
                                       AVMetadataObject.ObjectType.code39,
                                       AVMetadataObject.ObjectType.code39Mod43,
@@ -298,6 +310,8 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             if metadataObj.stringValue != nil {
                 //launchApp(decodedURL: metadataObj.stringValue!)
                 //messageLabel2.text = metadataObj.stringValue
+                
+                // The first time a barcode is scanned during this instance of this view controller, send it to the database for processing.
                 barcodeValue = Int(metadataObj.stringValue!)!
                 if (!barcodeFound) {
                     checkBarcode()
